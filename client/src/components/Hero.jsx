@@ -33,6 +33,7 @@ function Hero({ ids, names, ages, citys }) {
                 obj={course}
                 fruits={fruits}
             />
+
         </div>
     )
 }

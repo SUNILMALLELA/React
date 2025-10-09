@@ -3,6 +3,8 @@ import React from 'react'
 import Hero from './components/Hero'
 import Cond1 from './components/Cond1';
 import Cond2 from './components/Cond2';
+import Click from './components/Click';
+import Form from './components/Form';
 
 
 const fruits = ["apple", "banana", "carrot"]
@@ -31,8 +33,10 @@ function App() {
   //   message = <Cond2 />
   // }
   // return message;
+  const display = true;
   return (
     <>
+      {display ? <Cond1></Cond1> : <Cond2></Cond2>}
 
       <ul>
         {fruits.map((fruit, index) => (
@@ -49,6 +53,8 @@ function App() {
             citys={datas.city}
           />
         ))}
+        <Click />
+        <Form />
       </div>
     </>
   )
