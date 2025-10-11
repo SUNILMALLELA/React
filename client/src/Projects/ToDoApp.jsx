@@ -1,31 +1,18 @@
 import React, { useState } from 'react'
-import ToDoItem from './ToDoitem';
-
-
+import Form from './Form'
+import ToDoList from './ToDoList'
+import Footer from './Footer'
 function ToDoApp() {
-    const [todo, setTodo] = useState("")
     const [todos, setTodos] = useState([])
-    function Handleclick(e) {
-        setTodo(e.target.value)
-    }
-    function Handlesubmit(e) {
-        e.preventDefault();
-        setTodos([...todos, todo])
-        setTodo("")
-
-    }
-    return (
-        <>
-            <form onSubmit={Handlesubmit}>
-                <input type='text' placeholder='Enter the task' value={todo} onChange={Handleclick}></input>
-                <button>Add</button>
-            </form>
-            {todos.map((item, index) => (
-                <ToDoItem key={index} item={item} />
-            ))}
-
-        </>
-    )
+    const completedToDos = todos.filter((item)=>item.done).length
+    const totalTodos = todos.length
+  return (
+    <>
+    <Form todos ={todos} setTodos = {setTodos}/>
+    <ToDoList todos = {todos} setTodos = {setTodos}/>
+    <Footer completedToDos = {completedToDos} totalTodos = {totalTodos}/>
+    </>
+  )
 }
 
 export default ToDoApp

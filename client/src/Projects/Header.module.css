@@ -1,0 +1,10 @@
+.Header{
+   background-color: skyblue;
+   text-align: center;
+   height: 50px;
+   font-weight: bold;
+   color: gray;
+   padding: 20px;
+   font-size:50px;
+   box-shadow: 0 4px 6px rba(0,0,0,0.2);
+}
